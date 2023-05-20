@@ -1,5 +1,6 @@
 const express = require('express');
 const { tryCatchWrapper, validateBody } = require('../middlwares');
+const { upload } = require('../middlwares/avatar')
 const {
   getCurrentExchange,
   weatherForecast,
@@ -21,7 +22,7 @@ app.get('/weather', tryCatchWrapper(weatherForecast));
 
 app.post('/register', tryCatchWrapper(userRegistration));
 
-app.post('/products', validateBody(validateProduct), tryCatchWrapper(addProduct));
+app.post('/products', upload.single('image'), tryCatchWrapper(addProduct));
 app.get('/products', tryCatchWrapper(getProducts))
 
 app.post('/tasks', validateBody(validateTask), tryCatchWrapper(addTask));
@@ -30,3 +31,5 @@ app.get('/tasks', tryCatchWrapper(getTasks));
 app.delete('/tasks', tryCatchWrapper(deleteTask));
 
 module.exports = app;
+
+// , validateBody(validateProduct)

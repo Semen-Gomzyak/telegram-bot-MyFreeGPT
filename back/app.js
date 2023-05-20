@@ -13,7 +13,7 @@ const websiteRouter = require('./routes/websiteRoutes.js')
 app.use(logger(formatsLogger))
 app.use(cors());
 app.use(express.json());
-app.use(express.static('publick'))
+app.use(express.static('public'))
 
 app.use('/api', websiteRouter);
 

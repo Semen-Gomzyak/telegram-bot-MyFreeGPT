@@ -210,3 +210,50 @@ export const TextAreaInput = styled.textarea`
     color: #000000;
   }
 `;
+
+
+export const CharacteristicsLabel = styled.label`
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+
+  font-size: 18px;
+
+  text-align: center;
+
+  @media (min-width: 767px) {
+    font-size: 18px;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 20px;
+  }
+`;
+
+export const AddCharacteristicButton = styled(CombinedButton)`
+width: 140px;
+margin-left: 10px;
+`
+
+export const CharacteristicDescriptionContainer = styled.div`
+margin-bottom: 10px;
+`
+
+export const ImageField = styled(Field)`
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+`;
+
+export const ImageContainer = styled.div`
+  width: 51px;
+  height: 51px;
+  border: solid 1px white;
+  margin-left: 15px;
+`;
+
+export const ImageSectionContainer = styled.div`
+  display: flex;
+  align-items: center; 
+`;

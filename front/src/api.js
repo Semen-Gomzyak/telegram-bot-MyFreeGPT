@@ -10,6 +10,33 @@ export const getProducts = async () => {
 }
 };
 
+export const addProduct = async data => {
+  try {
+    const formData = new FormData();
+    formData.append('image', data.image); 
+    formData.append('name', data.name); 
+    formData.append('price', data.price); 
+    formData.append('payment', data.payment); 
+    formData.append('description', data.description); 
+    formData.append('characteristics', data.characteristics);
+    
+
+    const response = await axios.post(
+      `${BACK_END_BASE_URL}/products`,
+      formData,
+      {
+        headers: {
+          'Content-Type': 'multipart/form-data', // Устанавливаем правильный заголовок Content-Type для FormData
+        },
+      }
+    );
+
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export const getProductById =  async (productId) => {
   try {
   const response = await axios.get(

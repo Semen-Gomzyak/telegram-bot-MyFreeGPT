@@ -1,4 +1,5 @@
 import {
+  CombinedButton,
   CombinedImagesWrapper,
   CombinedItem,
   CombinedList,
@@ -83,4 +84,58 @@ export const CharacteristicsList = styled.ul`
 export const ProductDetailsText = styled(CombinedText)`
   text-align: left;
   margin: 5px 0 0 0;
+`;
+
+export const AddProductButton = styled(CombinedButton)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  margin: 0 auto;
+
+  font-size: 18px;
+`;
+
+export const BuyLink = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 50px;
+  padding: 0 10px;
+  margin: 0 auto;
+
+  font-size: 18px;
+
+  color: #ffffff;
+  background-color: #315330;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  text-align: center;
+
+  transition: color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    background-color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  &:hover,
+  &:focus {
+    background: #ccaf36;
+    color: #000000;
+    box-shadow: 0px 8px 43px rgba(ccaf36);
+    cursor: pointer;
+  }
+
+  @media (min-width: 767px) {
+    width: 118px;
+    height: 40px;
+    border-radius: 18px;
+    font-size: 18px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 168px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 25px;
+  }
 `;

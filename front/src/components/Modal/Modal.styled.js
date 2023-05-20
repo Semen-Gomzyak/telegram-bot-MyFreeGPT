@@ -3,7 +3,7 @@ import { MdClose } from 'react-icons/md';
 
 export const Backdrop = styled.div`
   position: fixed;
-  top: -129px;
+  top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;

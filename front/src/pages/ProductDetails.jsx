@@ -8,6 +8,7 @@ import {
   ImagesDetailWrapper,
   ProductDetailsText,
   CharacteristicsList,
+  BuyLink,
 } from 'components/ProductList/Product.styled';
 import { CombinedImage } from 'components/Combined/Combined';
 
@@ -34,7 +35,7 @@ export const ProductDetails = () => {
     <main>
       {product && (
         <>
-          <BackLink to={backLinkHref}>Back to products</BackLink>
+            <BackLink to={backLinkHref}>Back to products</BackLink>
           <div>
             <ImagesDetailWrapper>
               <CombinedImage
@@ -60,6 +61,7 @@ export const ProductDetails = () => {
               ))}
             </CharacteristicsList>
           </div>
+          <BuyLink href={product.payment}>Buy Now</BuyLink>
         </>
       )}
     </main>
