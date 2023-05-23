@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { UserContext } from './UserContext';
+import { useTelegram } from './hooks/useTelegram';
 
 const Exchange = lazy(() =>
   import('../pages/Exchange').then(module => ({
@@ -41,10 +42,14 @@ const Tasks = lazy(() =>
   }))
 );
 
-// const tg = window.Telegram.WebApp; tg.initDataUnsafe?.user;
+const tg = window.Telegram.WebApp; 
 
 export const App = () => {
-  const login = 'Semen237';
+  useEffect(() => {
+    tg.ready()
+  })
+
+  const login = tg.initDataUnsafe?.user;
 
   return (
     <UserContext.Provider value={login}>
