@@ -41,7 +41,7 @@ const Tasks = lazy(() =>
   }))
 );
 
-const tg = window.Telegram.WebApp;
+// const tg = window.Telegram.WebApp; tg.initDataUnsafe?.user;
 
 export const App = () => {
   const login = 'Semen237';
