@@ -41,11 +41,10 @@ const Tasks = lazy(() =>
   }))
 );
 
-// const tg = window.Telegram.WebApp;
+const tg = window.Telegram.WebApp;
 
 export const App = () => {
-  // const login = tg.initDataUnsafe?.user;
-  const login = 'Semen237';
+  const login = tg.initDataUnsafe?.user;
 
   return (
     <UserContext.Provider value={login}>
