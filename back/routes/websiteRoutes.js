@@ -13,7 +13,7 @@ const {
   deleteTask,
   deleteProduct,
 } = require('../controllers');
-const { validateTask, validateProduct } = require('../validations');
+const { validateTask } = require('../validations');
 
 const app = express.Router();
 

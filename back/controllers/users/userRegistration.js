@@ -7,7 +7,7 @@ const userRegistration = async (req, res, next) => {
     console.log(storedUser);
 
     if (storedUser) {
-        return res.status(409).json("User already registered")
+        return 
     }
 
     const createdUser = await User.create({
