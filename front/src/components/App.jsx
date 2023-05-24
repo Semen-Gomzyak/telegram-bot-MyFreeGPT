@@ -49,7 +49,7 @@ export const App = () => {
     tg.ready()
   })
 
-  const login = tg.initDataUnsafe?.user;
+  const login = tg.initDataUnsafe?.user?.username;
 
   return (
     <UserContext.Provider value={login}>
