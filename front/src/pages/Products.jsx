@@ -74,7 +74,6 @@ export const Products = () => {
       {adminRole && (
         <AddProductButton onClick={toggleModal}>Add Product</AddProductButton>
       )}
-      <h2>Login: {login}</h2>
       <ProductList products={visibleProducts} />
 
       {showModal && (
