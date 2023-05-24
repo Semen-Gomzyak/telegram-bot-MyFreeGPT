@@ -3,7 +3,6 @@ import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { UserContext } from './UserContext';
-import { useTelegram } from './hooks/useTelegram';
 
 const Exchange = lazy(() =>
   import('../pages/Exchange').then(module => ({

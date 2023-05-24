@@ -51,8 +51,7 @@ const messageOpenAI = async (bot, ctx, message, webAppUrl) => {
     const keyboard = {
       reply_markup: {
         keyboard: [
-          ['Info', { text: 'Open site', web_app: { url: webAppUrl } }],
-          ['Donate'],
+          ['Info', 'Donate' ],
         ],
         resize_keyboard: true,
       },

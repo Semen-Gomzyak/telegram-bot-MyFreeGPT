@@ -17,10 +17,7 @@ const sendInfoMessage = async (bot, ctx, webAppUrl) => {
 
   const keyboard = {
     reply_markup: {
-      keyboard: [
-        ['Info', { text: 'Open site', web_app: { url: webAppUrl } }],
-        ['Donate'],
-      ],
+      keyboard: [['Info', 'Donate']],
       resize_keyboard: true,
     },
   };
