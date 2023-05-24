@@ -72,7 +72,7 @@ export const Tasks = () => {
       toggleModal();
       const response = await updateTask(data);
       setTasks(prevTasks =>
-        prevTasks.map(task => (task._id === response._id ? response : task))
+        prevTasks.map(task => (task.id === response._id ? response : task))
       );
       return setEditTask(false);
     }

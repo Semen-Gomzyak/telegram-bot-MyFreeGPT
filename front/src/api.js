@@ -26,7 +26,7 @@ export const addProduct = async data => {
       formData,
       {
         headers: {
-          'Content-Type': 'multipart/form-data', // Устанавливаем правильный заголовок Content-Type для FormData
+          'Content-Type': 'multipart/form-data', 
         },
       }
     );
@@ -89,8 +89,10 @@ export const getTask = async (params) => {
 };
 
 export const updateTask = async data => {
+  console.log(data);
   try {
     const response = await axios.put(`${BACK_END_BASE_URL}/tasks`, data);
+    console.log(response);
     return response.data;
   } catch (error) {
     console.error(error);
