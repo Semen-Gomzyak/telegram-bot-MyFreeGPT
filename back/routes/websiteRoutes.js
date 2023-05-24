@@ -11,6 +11,7 @@ const {
   getTasks,
   updateTask,
   deleteTask,
+  deleteProduct,
 } = require('../controllers');
 const { validateTask, validateProduct } = require('../validations');
 
@@ -23,7 +24,8 @@ app.get('/weather', tryCatchWrapper(weatherForecast));
 app.post('/register', tryCatchWrapper(userRegistration));
 
 app.post('/products', upload.single('image'), tryCatchWrapper(addProduct));
-app.get('/products', tryCatchWrapper(getProducts))
+app.get('/products', tryCatchWrapper(getProducts));
+app.delete('/products', tryCatchWrapper(deleteProduct));
 
 app.post('/tasks', validateBody(validateTask), tryCatchWrapper(addTask));
 app.put('/tasks', validateBody(validateTask), tryCatchWrapper(updateTask));
@@ -31,5 +33,3 @@ app.get('/tasks', tryCatchWrapper(getTasks));
 app.delete('/tasks', tryCatchWrapper(deleteTask));
 
 module.exports = app;
-
-// , validateBody(validateProduct)

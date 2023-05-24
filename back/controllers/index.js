@@ -11,6 +11,7 @@ const addTask = require('./tasks/addTask');
 const getTasks = require('./tasks/getTasks');
 const updateTask = require('./tasks/updateTask');
 const deleteTask = require('./tasks/deleteTask');
+const deleteProduct = require('./products/deleteProduct')
 
 module.exports = {
   startWorkingWithBot,
@@ -26,4 +27,5 @@ module.exports = {
   updateTask,
   deleteTask,
   sendInfoMessage,
+  deleteProduct,
 };
