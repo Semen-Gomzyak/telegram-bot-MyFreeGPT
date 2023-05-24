@@ -17,8 +17,8 @@ app.use(express.static('public'))
 
 app.use('/api', websiteRouter);
 
-process.once('SIGINT', () => {});
-process.once('SIGTERM', () => {});
+process.once('SIGINT', () => bot.stop('SIGIT'));
+process.once('SIGTERM', () => bot.stop('SIGTERM'));
 
 bot.launch();
 
