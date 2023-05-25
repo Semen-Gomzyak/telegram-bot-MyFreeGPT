@@ -24,7 +24,6 @@ const weatherForecast = async (req, res) => {
       min_temp: Math.round(item.main.temp_min - 273.15),
       max_temp: Math.round(item.main.temp_max - 273.15),
     }));
-  console.log(city, country, weatherData);
     res.status(200).json({
       city,
       country,

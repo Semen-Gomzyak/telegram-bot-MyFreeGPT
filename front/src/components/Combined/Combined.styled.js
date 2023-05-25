@@ -5,7 +5,7 @@ export const List = styled.ul`
   display: grid;
   justify-content: center;
   align-items: center;
-  grid-template-columns: repeat(auto-fit, 135px);
+  grid-template-columns: repeat(auto-fit, 250px);
   gap: 15px;
 
   @media (min-width: 480px) {
@@ -75,7 +75,7 @@ export const Image = styled.img`
 
 export const ImagesWrapper = styled.div`
   width: 100%;
-  height: 100px;
+  height: 150px;
 
   @media (min-width: 480px) {
     height: 120px;

@@ -1,5 +1,6 @@
 import moment from "moment";
 import { CombinedImage, CombinedImagesWrapper, CombinedItem, CombinedText, CombinedTextWrapper } from "components/Combined/Combined";
+import { WeatherImageWrapper } from "./Weather.styled";
 
 
 export const WeatherItem = ({ value }) => {
@@ -7,9 +8,9 @@ export const WeatherItem = ({ value }) => {
     const formattedTime = moment(value.date).format('HH.mm')
     return (
       <CombinedItem>
-        <CombinedImagesWrapper>
+        <WeatherImageWrapper>
           <CombinedImage src={value.image} alt={value.main} />
-        </CombinedImagesWrapper>
+        </WeatherImageWrapper>
         <CombinedTextWrapper>
           <CombinedText>Date: {formattedDate}</CombinedText>
           <CombinedText>Time: {formattedTime}</CombinedText>

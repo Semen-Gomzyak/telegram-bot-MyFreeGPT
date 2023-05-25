@@ -72,7 +72,7 @@ export const Products = () => {
     <main>
       <SearchBox value={productName} onChange={updateQueryString} />
       {adminRole && (
-        <AddProductButton onClick={toggleModal}>Add Product</AddProductButton>
+          <AddProductButton onClick={toggleModal}>Add Product</AddProductButton>
       )}
       <ProductList products={visibleProducts} />
 

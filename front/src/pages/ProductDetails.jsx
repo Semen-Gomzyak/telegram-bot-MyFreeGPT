@@ -1,6 +1,6 @@
 import { useParams, useLocation } from 'react-router-dom';
 import { BackLink } from 'components/BackLink';
-import { getProductById } from 'api';
+import { deleteProduct, getProductById } from 'api';
 import { useEffect, useState } from 'react';
 import {
   ProductName,
@@ -10,7 +10,8 @@ import {
   CharacteristicsList,
   BuyLink,
 } from 'components/ProductList/Product.styled';
-import { CombinedImage } from 'components/Combined/Combined';
+import { CombinedButton, CombinedImage } from 'components/Combined/Combined';
+import { ButtonContainer } from 'components/Combined/Form.styled';
 
 export const ProductDetails = () => {
   const [product, setProduct] = useState(null);
@@ -31,11 +32,19 @@ export const ProductDetails = () => {
     fetchOneProduct();
   }, [id]);
 
+  const deleteProductByID = async () => {
+    return await deleteProduct(id);
+  };
+
+
   return (
     <main>
       {product && (
         <>
+          <ButtonContainer>
             <BackLink to={backLinkHref}>Back to products</BackLink>
+            <CombinedButton onClick={deleteProductByID}>Delete</CombinedButton>
+          </ButtonContainer>
           <div>
             <ImagesDetailWrapper>
               <CombinedImage

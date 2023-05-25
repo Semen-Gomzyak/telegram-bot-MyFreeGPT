@@ -6,7 +6,8 @@ const validateTask = Joi.object({
   priority: Joi.string().valid('low', 'middle', 'high').required(),
   expired_at: Joi.date().required(),
   status: Joi.string().valid('to_do', 'in_progress', 'done').required(),
-  username: Joi.string()
+  username: Joi.string(),
+  id: Joi.string()
 });
 
 module.exports = validateTask;

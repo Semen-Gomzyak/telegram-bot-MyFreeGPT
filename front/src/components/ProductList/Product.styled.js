@@ -139,3 +139,9 @@ export const BuyLink = styled.a`
     border-radius: 25px;
   }
 `;
+
+export const ButtonContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}`;

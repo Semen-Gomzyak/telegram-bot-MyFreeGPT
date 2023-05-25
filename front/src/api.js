@@ -18,7 +18,8 @@ export const addProduct = async data => {
     formData.append('price', data.price); 
     formData.append('payment', data.payment); 
     formData.append('description', data.description); 
-    formData.append('characteristics', data.characteristics);
+    const characteristicsString = JSON.stringify(data.characteristics);
+    formData.append('characteristics', characteristicsString);
     
 
     const response = await axios.post(
@@ -47,6 +48,17 @@ export const getProductById =  async (productId) => {
   console.log(error);
 }
 };
+
+export const deleteProduct = async (productId) => {
+  try {
+      const response = await axios.delete(
+        `${BACK_END_BASE_URL}/products?id=${productId}`
+    );
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 export const getExchange = async () => {
 try {
@@ -89,10 +101,8 @@ export const getTask = async (params) => {
 };
 
 export const updateTask = async data => {
-  console.log(data);
   try {
     const response = await axios.put(`${BACK_END_BASE_URL}/tasks`, data);
-    console.log(response);
     return response.data;
   } catch (error) {
     console.error(error);

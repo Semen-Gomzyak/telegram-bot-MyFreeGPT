@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import { CombinedButton, CombinedInput, CombinedList, CombinedSectionTitle, CombinedSelectedWrapper } from 'components/Combined/Combined';
 
 export const WeatherListContainer = styled(CombinedList)`
+  grid-template-columns: repeat(auto-fit, 125px);
+  gap: 10px;
+
+
   @media (min-width: 768px) {
     grid-template-columns: repeat(auto-fit, 200px);
     gap: 18px;
@@ -48,4 +52,8 @@ export const WeatherCountryandCityTitle = styled.h2`
   text-align: center;
   margin-top: 0;
   margin: 25px 0;
+`;
+
+export const WeatherImageWrapper = styled(CombinedSelectedWrapper)`
+height: 100px;
 `;

@@ -40,16 +40,11 @@ const getTasks = async (req, res) => {
       query.priority = priority;
     }
 
-    let tasksQuery = Task.find(query);
-
     const sortOptions = {};
 
     switch (sort) {
-      case 'newest':
-        sortOptions.createdAt = 1;
-        break;
       case 'oldest':
-        sortOptions.createdAt = -1;
+        sortOptions.createdAt = 1;
         break;
       case 'az':
         sortOptions.title = 1;
@@ -58,6 +53,7 @@ const getTasks = async (req, res) => {
         sortOptions.title = -1;
         break;
       default:
+        sortOptions.createdAt = -1;
         break;
     }
 
